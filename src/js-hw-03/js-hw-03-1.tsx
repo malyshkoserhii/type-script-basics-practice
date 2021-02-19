@@ -2,7 +2,7 @@ interface IUser {
   [key: string]: string | number | boolean;
 }
 
-const user: User = {
+const user: IUser = {
   name: "Mango",
   age: 20,
   hobby: "html",
