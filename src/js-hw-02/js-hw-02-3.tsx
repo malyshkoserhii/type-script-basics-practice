@@ -1,10 +1,10 @@
 // type LongestWord = (str: string) => string;
 
-interface LongestWord {
+interface ILongestWord {
   (s: string): string;
 }
 
-const findLongestWord: LongestWord = function (string) {
+const findLongestWord: ILongestWord = function (string) {
   const words: string[] = string.split(" ");
   let longestWorld: string = words[0];
   for (let i: number = 0; i < words.length; i += 1) {

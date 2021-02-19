@@ -1,6 +1,6 @@
 type FormatString = (s: string) => string;
 
-// interface FormatString {
+// interface IFormatString {
 //   (s: string): string;
 // }
 

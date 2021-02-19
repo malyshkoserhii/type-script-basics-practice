@@ -1,11 +1,11 @@
 type PropValues = (a: any, prop: string) => string[] | number[];
 
-interface Arr {
+interface IArr {
     [key: string]: string | number;
 }
 
-const products: Arr[] = [
-    { name: "Радар", price: 1300, quantity: 4, qwerty: 123 },
+const products: IArr[] = [
+    { name: "Радар", price: 1300, quantity: 4 },
     { name: "Сканер", price: 2700, quantity: 3 },
     { name: "Дроид", price: 400, quantity: 7 },
     { name: "Захват", price: 1200, quantity: 2 },

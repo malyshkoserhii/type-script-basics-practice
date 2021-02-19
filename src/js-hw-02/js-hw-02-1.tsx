@@ -1,6 +1,6 @@
 type LogItemsFn = (array: string[] | number[]) => void;
 
-// interface LogItemsFn {
+// interface ILogItemsFn {
 //   (array: string[] | number[] ): void
 // }
 

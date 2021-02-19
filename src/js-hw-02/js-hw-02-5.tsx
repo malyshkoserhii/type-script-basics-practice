@@ -1,6 +1,6 @@
 type Spam = (m: string) => boolean;
 
-// interface Spam {
+// interface ISpam {
 //     (m: string): boolean;
 // }
 

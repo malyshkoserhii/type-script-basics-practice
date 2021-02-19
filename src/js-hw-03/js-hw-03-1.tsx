@@ -1,4 +1,4 @@
-interface User {
+interface IUser {
   [key: string]: string | number | boolean;
 }
 

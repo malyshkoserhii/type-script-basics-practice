@@ -1,6 +1,6 @@
 type CalculatePrice = (m: string, p: number) => number;
 
-// interface CalculatePrice {
+// interface ICalculatePrice {
 //     (m: string, p: number): number;
 // }
 

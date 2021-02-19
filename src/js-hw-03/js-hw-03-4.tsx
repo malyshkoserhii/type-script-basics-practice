@@ -1,16 +1,16 @@
-interface Salary {
+interface ISalary {
   [key: string]: number;
 }
 
 type EmployeesSalary = (e: object) => string;
 
-const objFirst: Salary = {
+const objFirst: ISalary = {
   mango: 100,
   poly: 150,
   alfred: 80,
 };
 
-const objSecond: Salary = {
+const objSecond: ISalary = {
   kiwi: 200,
   lux: 50,
   chelsy: 150,
