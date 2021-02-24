@@ -1,41 +1,48 @@
-interface Params {
-  name: string;
-  age: number;
-  followers: number;
+interface IStorage {
+  items: string[];
+  getItems(item: string): string[];
+  addItem(item: string): void;
+  removeItem(item: string): void;
 }
 
-class User {
-  public name: string;
-  public age: number;
-  public followers: number;
+class Storage implements IStorage {
+  items: string[];
 
-  constructor({ name, age, followers }: Params) {
-    this.name = name;
-    this.age = age;
-    this.followers = followers;
+  constructor(items: string[]) {
+    this.items = items;
   }
 
-  getInfo() {
-    console.log(
-      `User ${this.name} is ${this.age} years old has ${this.followers} followers`
-    );
+  getItems() {
+    return this.items;
+  }
+
+  addItem(item: string) {
+    return items.push(item);
+  }
+
+  removeItem(item: string) {
+    for (let i = 0; i < items.length; i += 1) {
+      if (item === items[i]) {
+        items.splice(i, 1);
+      }
+    }
   }
 }
 
-const mango = new User({
-  name: 'Mango',
-  age: 2,
-  followers: 20,
-});
+const storage = new Storage([
+  'Нанитоиды',
+  'Пролонгер',
+  'Железные жупи',
+  'Антигравитатор',
+]);
 
-mango.getInfo();
+const items = storage.getItems();
+console.table(items);
 
-const poly = new User({
-  name: 'Poly',
-  age: 3,
-  followers: 17,
-});
+storage.addItem('Дроид');
+console.table(storage.items);
 
-poly.getInfo();
+storage.removeItem('Пролонгер');
+console.log(storage.items);
 
 export {};

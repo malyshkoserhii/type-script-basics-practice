@@ -1,48 +1,44 @@
-interface IStorage {
-  items: string[];
-  getItems(item: string): string[];
-  addItem(item: string): void;
-  removeItem(item: string): void;
+interface IStringBulder {
+    value: string;
+    getValue(): string;
+    append(str: string): string;
+    prepend(str: string): string;
+    pad(str: string): string;
 }
 
-class Storage implements IStorage {
-  items: string[];
+class StringBuilder implements IStringBulder {
+  value: string;
 
-  constructor(items: string[]) {
-    this.items = items;
+  constructor(value: string) {
+    this.value = value;
   }
 
-  getItems() {
-    return this.items;
+  getValue() {
+    return this.value;
   }
 
-  addItem(item: string) {
-    return items.push(item);
+  append(str: string) {
+    return this.value = this.value + str;
   }
 
-  removeItem(item: string) {
-    for (let i = 0; i < items.length; i += 1) {
-      if (item === items[i]) {
-        items.splice(i, 1);
-      }
-    }
+  prepend(str: string) {
+    return this.value = str + this.value;
+  }
+
+  pad(str: string) {
+    return this.value = str + this.value + str;
   }
 }
 
-const storage = new Storage([
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор',
-]);
+const builder = new StringBuilder('.');
 
-const items = storage.getItems();
-console.table(items);
+builder.append('^');
+console.log(builder.value);
 
-storage.addItem('Дроид');
-console.table(storage.items);
+builder.prepend('^');
+console.log(builder.value);
 
-storage.removeItem('Пролонгер');
-console.log(storage.items);
+builder.pad('=');
+console.log(builder.value);
 
 export {};
